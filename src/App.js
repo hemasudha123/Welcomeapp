@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useState } from 'react'
 function App() {
+  const [clicked, setClicked] = useState("")
+  
+  const handleClicked = () => {
+    setClicked(!clicked)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="WelcomeContainer">
+      <h1 className="title">Welcome</h1>
+      <div className="downbuttons">
+        <h3>Thank you! Happy Learning</h3>
+        <button onClick={handleClicked}>
+          { clicked ? 'Subscribed':'Subscribe'}
+        </button>
+      </div>
     </div>
   );
 }
